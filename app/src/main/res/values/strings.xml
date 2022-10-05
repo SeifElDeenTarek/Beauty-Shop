@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">retrofit</string>
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="brand_name" />
+
+    <string-array name="brand_list">
+        <item>almay</item>
+        <item>alva</item>
+        <item>anna sui</item>
+        <item>maybelline</item>
+        <item>green people</item>
+        <item>mineral fusion</item>
+        <item>wet n wild</item>
+        <item>milani</item>
+        <item>e.l.f.</item>
+        <item>fenty</item>
+        <item>pacifica</item>
+        <item>sante</item>
+    </string-array>
+
+    <string-array name="product_type_list">
+        <item>blush</item>
+        <item>bronzer</item>
+        <item>eyebrow</item>
+        <item>eyeliner</item>
+        <item>eyeshadow</item>
+        <item>eyeliner</item>
+        <item>foundation</item>
+        <item>lip_liner</item>
+        <item>lipstick</item>
+        <item>mascara</item>
+        <item>nail_polish</item>
+    </string-array>
+</resources>
