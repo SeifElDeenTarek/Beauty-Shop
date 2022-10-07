@@ -6,8 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="8dp"
     android:layout_margin="10dp"
-    android:clickable="true"
-    android:id="@+id/item">
+    android:clickable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:contentDescription="Product Picture"
-            android:id="@+id/product_picture"/>
+            android:id="@+id/product_image_room"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,32 +27,29 @@
             android:id="@+id/product_texts">
 
             <TextView
-                android:id="@+id/product_name"
+                android:id="@+id/product_name_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                 android:maxLength="20"
-                tools:text="fsfdmfsnrnfjwrn"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/product_brand"
+                android:id="@+id/product_brand_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                tools:text="fsfdmfsnrnfjwrn"
                 android:textStyle="bold"
                 android:capitalize="sentences"
                 android:layout_marginTop="8dp"
-                android:layout_below="@+id/product_name"
+                android:layout_below="@+id/product_name_room"
                 tools:ignore="Deprecated" />
 
             <TextView
-                android:id="@+id/product_price"
+                android:id="@+id/product_price_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                tools:text="5$"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 android:layout_alignParentEnd="true"/>

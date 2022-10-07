@@ -6,12 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.retrofit.R;
 import com.example.retrofit.pojo.Product;
 import com.squareup.picasso.Picasso;
@@ -40,8 +43,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.productBrand.setText(productList.get(position).getBrand());
         holder.productPrice.setText(productList.get(position).getPrice()+"$");
         Uri uri = Uri.parse(productList.get(position).getImageLink());
-        holder.productImage.setImageURI(null);
-        holder.productImage.setImageURI(uri);
+        //holder.productImage.setImageURI(null);
+        //holder.productImage.setImageURI(uri);
+
+        Glide.with(holder.productImage.getContext())
+                .load(uri)
+                .override(150, 150)
+                .into(holder.productImage);
 
         holder.itemView.setOnClickListener(v ->{
             itemClickListener.onItemClick(productList.get(position));
@@ -78,6 +86,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             productBrand = itemView.findViewById(R.id.product_brand);
             productPrice = itemView.findViewById(R.id.product_price);
             productImage = itemView.findViewById(R.id.product_picture);
+
         }
     }
 }

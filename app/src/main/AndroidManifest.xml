@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.retrofit">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,10 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.retrofit.ui.settings.SettingsActivity"
+            android:name=".ui.cart.CartActivity"
+            android:label="Cart"
+            android:parentActivityName=".ui.main.MainActivity"/>
+        <activity
+            android:name=".ui.settings.SettingsActivity"
             android:label="Search"
-            android:parentActivityName=".ui.main.MainActivity">
-        </activity>
+            android:parentActivityName=".ui.main.MainActivity" />
     </application>
 
 </manifest>

@@ -8,6 +8,107 @@
     tools:context=".ui.main.MainActivity"
     android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/full_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/full_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:maxLength="20"
+                    tools:text="fsfdmfsnrnfjwrn"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/full_product_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    tools:text="fsfdmfsnrnfjwrn"
+                    android:capitalize="sentences"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/full_product_name"
+                    tools:ignore="Deprecated" />
+
+                <TextView
+                    android:id="@+id/full_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    tools:text="5$"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:layout_alignParentEnd="true"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:text="Description"
+                    android:id="@+id/Descr"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_below="@+id/Descr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/full_product_desc"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+                <ImageButton
+                    android:layout_below="@id/full_product_desc"
+                    android:id="@+id/room_cart"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/outline_shopping_cart_white_24"
+                    android:background="#000"
+                    android:layout_toLeftOf="@id/website_buy"
+                    android:layout_margin="8dp"/>
+
+                <Button
+                    android:layout_below="@id/full_product_desc"
+                    android:id="@+id/website_buy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buy"
+                    android:layout_margin="8dp"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

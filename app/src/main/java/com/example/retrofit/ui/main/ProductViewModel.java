@@ -48,7 +48,7 @@ public class ProductViewModel extends ViewModel
             @Override
             public void onNext(List<Product> productList)
             {
-                productList = productList.subList(0, 150);
+                productList = productList.subList(50, 500);
                 productMutableLiveData.setValue(productList);
                 Log.d(TAG, "3DD" + productList.size());
                 loading.setValue(false);

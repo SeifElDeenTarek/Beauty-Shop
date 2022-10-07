@@ -1,6 +1,7 @@
 package com.example.retrofit.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -21,13 +22,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.retrofit.R;
 import com.example.retrofit.data.ProductInterface;
 import com.example.retrofit.pojo.Product;
+import com.example.retrofit.ui.cart.CartActivity;
 import com.example.retrofit.ui.settings.SettingsActivity;
 import com.squareup.picasso.Picasso;
 
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
     ProductViewModel productViewModel;
     ProgressBar progressBar;
+    CardView expandedCard;
     private static final String SEPARATOR = ".json";
 
     @Override
@@ -56,6 +61,21 @@ public class MainActivity extends AppCompatActivity
         // int status = getIntent().getIntExtra("condition", 0);
         String brand = getIntent().getStringExtra("extra_brand");
         String product = getIntent().getStringExtra("extra_product_name");
+
+        TextView fullName, fullBrand, fullPrice, fullDesc;
+
+        ImageButton cartButton;
+        Button buyButton;
+
+        fullName = findViewById(R.id.full_product_name);
+        fullBrand = findViewById(R.id.full_product_brand);
+        fullPrice = findViewById(R.id.full_product_price);
+        fullDesc = findViewById(R.id.full_product_desc);
+        cartButton = findViewById(R.id.room_cart);
+        buyButton = findViewById(R.id.website_buy);
+        expandedCard = findViewById(R.id.full_product);
+
+
 
         if(brand == null && product == null)
         {
@@ -141,7 +161,31 @@ public class MainActivity extends AppCompatActivity
                         @Override
                         public void onItemClick(Product product)
                         {
-                            websiteIntent(product.getProductApiUrl());
+                            expandedCard.setVisibility(View.VISIBLE);
+                            fullName.setText(product.getName());
+                            fullBrand.setText(product.getBrand());
+                            fullPrice.setText(product.getPrice()+"$");
+                            fullDesc.setText(product.getDescription());
+                            fullName.setText(product.getName());
+                            fullName.setText(product.getName());
+
+                            buyButton.setOnClickListener(new View.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(View v)
+                                {
+                                    websiteIntent(product.getProductApiUrl());
+                                }
+                            });
+                            cartButton.setOnClickListener(new View.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(View v)
+                                {
+                                    roomIntent(product.getId(), product.getName(), product.getBrand(), product.getPrice(),
+                                            product.getImageLink(), product.getProductApiUrl());
+                                }
+                            });
                         }
                     });
                 }
@@ -169,6 +213,19 @@ Picasso.with(MainActivity.this).load(response.body().getImageLink()).into(test);
 }
 });
  **/
+    }
+
+    public Intent roomIntent(int id,String name, String brand, String price, String imageLink, String productURL)
+    {
+        Intent roomIntent = new Intent(this, CartActivity.class);
+        roomIntent.putExtra("product_id", id);
+        roomIntent.putExtra("product_name", name);
+        roomIntent.putExtra("product_brand", brand);
+        roomIntent.putExtra("product_price", price);
+        roomIntent.putExtra("product_image_link", imageLink);
+        roomIntent.putExtra("product_url", productURL);
+        startActivity(roomIntent);
+        return roomIntent;
     }
 
     public Intent websiteIntent(String url)
@@ -210,7 +267,18 @@ Picasso.with(MainActivity.this).load(response.body().getImageLink()).into(test);
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.cart_icon)
+        {
+            Intent intent = new Intent(this, CartActivity.class);
+            startActivity(intent);
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        expandedCard.setVisibility(View.GONE);
     }
 }
