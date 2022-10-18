@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">retrofit</string>
+    <string name="app_name">Beauty Shop</string>
     <string name="no_internet_connection">No internet connection.</string>
     <string name="brand_name" />
+    <string name="picture_content_desc">Product Picture</string>
+    <string name="product_type_hint">lipstick, blush...</string>
+    <string name="search_product_type">Product Type</string>
+    <string name="brand_hint">maybelline, colourpop...</string>
+    <string name="brand_search">Brand</string>
 
     <string-array name="brand_list">
         <item>almay</item>

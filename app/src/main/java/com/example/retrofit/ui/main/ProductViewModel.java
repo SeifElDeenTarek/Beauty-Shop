@@ -33,9 +33,9 @@ public class ProductViewModel extends ViewModel
     public void getProducts()
     {
         loading.setValue(true);
-        Observable observable = ProductClient.getINSTANCE().getProducts().
-                subscribeOn(Schedulers.io()).
-                observeOn(AndroidSchedulers.mainThread());
+        Observable observable = ProductClient.getINSTANCE().getProducts()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
 
         Observer<List<Product>> observer = new Observer<List<Product>>()
         {

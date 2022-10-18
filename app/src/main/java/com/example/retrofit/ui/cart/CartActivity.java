@@ -1,14 +1,12 @@
 package com.example.retrofit.ui.cart;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.retrofit.R;
 import com.example.retrofit.room.RoomDataBase;
@@ -18,19 +16,19 @@ import java.util.List;
 
 import io.reactivex.CompletableObserver;
 import io.reactivex.Observer;
-import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class CartActivity extends AppCompatActivity
 {
-    CartAdaper cartAdaper = new CartAdaper();
+    Context context;
     private static final String TAG = "CartActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        context = getApplicationContext();
 
         String name = getIntent().getStringExtra("product_name");
         String brand = getIntent().getStringExtra("product_brand");
@@ -42,12 +40,11 @@ public class CartActivity extends AppCompatActivity
         Log.d(TAG, "Room: "+ id+name+brand+price+imageLink+productUrl);
 
         RecyclerView cartRecycler = findViewById(R.id.room_recycler);
-
+        final CartAdapter cartAdapter = new CartAdapter();
         cartRecycler.setLayoutManager(new LinearLayoutManager(this));
-        cartRecycler.setAdapter(cartAdaper);
+        cartRecycler.setAdapter(cartAdapter);
 
-
-        final RoomDataBase roomDataBase = RoomDataBase.getInstance(this);
+        RoomDataBase roomDataBase = RoomDataBase.getInstance(context);
 
         if(name != null)
         {
@@ -77,8 +74,7 @@ public class CartActivity extends AppCompatActivity
         roomDataBase.roomDao().getProducts()
                 .subscribeOn(Schedulers.computation())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<List<RoomProduct>>()
-                {
+                .subscribe(new Observer<List<RoomProduct>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
@@ -86,10 +82,9 @@ public class CartActivity extends AppCompatActivity
 
                     @Override
                     public void onNext(List<RoomProduct> roomProducts) {
-
-                        cartAdaper.setList(roomProducts);
-                        cartAdaper.notifyDataSetChanged();
-                        Log.d(TAG, "Room3: "+ id+name+brand+price+imageLink+productUrl+roomProducts.size());
+                        cartAdapter.setList(roomProducts);
+                        cartAdapter.notifyDataSetChanged();
+                        Log.d(TAG, "Room3: "+ id+name+brand+price+imageLink+productUrl);
                     }
 
                     @Override
@@ -101,7 +96,7 @@ public class CartActivity extends AppCompatActivity
                     public void onComplete() {
 
 
-                    }});
-
+                    }
+                });
     };
 }

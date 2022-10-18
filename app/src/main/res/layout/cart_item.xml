@@ -4,9 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp"
-    android:layout_margin="10dp"
-    android:clickable="true">
+    style="@style/cardViewStyle">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:contentDescription="Product Picture"
+            android:contentDescription="@string/picture_content_desc"
             android:id="@+id/product_image_room"/>
 
         <RelativeLayout
@@ -30,30 +28,23 @@
                 android:id="@+id/product_name_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                android:maxLength="20"
-                android:textStyle="bold"/>
+                style="@style/itemName"
+                tools:text="Make up blush Gamda"/>
 
             <TextView
                 android:id="@+id/product_brand_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-                android:textStyle="bold"
-                android:capitalize="sentences"
-                android:layout_marginTop="8dp"
                 android:layout_below="@+id/product_name_room"
-                tools:ignore="Deprecated" />
+                style="@style/itemBrand"
+                tools:text="Fantastic"/>
 
             <TextView
                 android:id="@+id/product_price_room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:layout_alignParentEnd="true"/>
-
+                style="@style/itemPrice"
+                tools:text="11$"/>
 
         </RelativeLayout>
 

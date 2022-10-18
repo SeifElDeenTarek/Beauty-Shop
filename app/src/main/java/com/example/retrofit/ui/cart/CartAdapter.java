@@ -10,33 +10,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-import androidx.room.RoomOpenHelper;
 
 
 import com.bumptech.glide.Glide;
 import com.example.retrofit.R;
 import com.example.retrofit.room.RoomProduct;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartAdaper extends RecyclerView.Adapter<CartAdaper.CartViewHolder>
+public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder>
 {
-
-    Context context;
-
     private List<RoomProduct> roomProducts = new ArrayList<>();
 
     @Override
-    public CartAdaper.CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
+    public CartAdapter.CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         return new CartViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.cart_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartAdaper.CartViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull CartAdapter.CartViewHolder holder, int position)
     {
         holder.productName.setText(roomProducts.get(position).getName());
         holder.productBrand.setText(roomProducts.get(position).getBrand());
@@ -52,7 +46,8 @@ public class CartAdaper extends RecyclerView.Adapter<CartAdaper.CartViewHolder>
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return roomProducts.size();
     }
 
@@ -60,7 +55,7 @@ public class CartAdaper extends RecyclerView.Adapter<CartAdaper.CartViewHolder>
     {
         this.roomProducts.clear();
         this.roomProducts = roomProducts;
-        this.notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder

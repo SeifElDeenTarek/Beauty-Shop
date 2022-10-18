@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F1F1F1">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/full_product"
@@ -16,6 +17,7 @@
         android:layout_margin="10dp"
         android:clickable="true"
         android:layout_centerInParent="true"
+        app:cardElevation="8dp"
         android:visibility="gone">
 
         <LinearLayout

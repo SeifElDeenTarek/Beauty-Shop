@@ -18,18 +18,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:text="Brand"
             android:id="@+id/brand_text_view"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:text="@string/brand_search"
+            style="@style/constantSearch"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/brand_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeColor="@color/secondary"
             android:enabled="true"
             app:hintAnimationEnabled="false"
             app:expandedHintEnabled="true"
@@ -38,12 +36,10 @@
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="maybelline, colourpop..."
-                android:textColor="#000000"
+                android:hint="@string/brand_hint"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:id="@+id/brand_name"
                 android:inputType="none"
-                android:background="@null"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -51,18 +47,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            android:text="Product Type"
+            android:text="@string/search_product_type"
             android:id="@+id/product_text_view"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            style="@style/constantSearch"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/product_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeColor="@color/secondary"
             android:enabled="true"
             app:hintAnimationEnabled="false"
             app:expandedHintEnabled="true">
@@ -70,13 +64,10 @@
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="lipstick, blush..."
-                android:textColor="#000000"
+                android:hint="@string/product_type_hint"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:id="@+id/product_name"
-                android:inputType="none"
-                android:background="@null"
-                />
+                android:inputType="text"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +80,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:src="@drawable/twotone_search_white_36"
-        app:tint="#FFFFFF"/>
+        android:src="@drawable/search_button"
+        android:backgroundTint="@color/primary"/>
 
 </RelativeLayout>

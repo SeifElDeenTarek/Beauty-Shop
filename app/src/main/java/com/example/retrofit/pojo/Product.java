@@ -65,19 +65,6 @@ public class Product {
     @SerializedName("product_colors")
     @Expose
     private List<ProductColor> productColors = null;
-    @SerializedName("visibility")
-    @Expose
-    private boolean visibility;
-
-    public boolean isVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(boolean visibility) {
-        this.visibility = visibility;
-    }
-
-
 
     public Integer getId() {
         return id;

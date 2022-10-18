@@ -15,23 +15,18 @@ public class RoomProduct
     @SerializedName("id")
     @Expose
     private Integer id;
-    //@ColumnInfo(name = "name")
     @SerializedName("name")
     @Expose
     private String name;
-    //@ColumnInfo(name = "brand")
     @SerializedName("brand")
     @Expose
     private String brand;
-    //@ColumnInfo(name = "price")
     @SerializedName("price")
     @Expose
     private String price;
-    //@ColumnInfo(name = "image_link")
     @SerializedName("image_link")
     @Expose
     private String imageLink;
-    //@ColumnInfo(name = "product_link")
     @SerializedName("product_link")
     @Expose
     private String productURL;
