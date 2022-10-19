@@ -24,20 +24,25 @@ public class RoomProduct
     @SerializedName("price")
     @Expose
     private String price;
+    @SerializedName("description")
+    @Expose
+    private String description;
     @SerializedName("image_link")
     @Expose
     private String imageLink;
     @SerializedName("product_link")
     @Expose
-    private String productURL;
+    private String url;
 
-    public RoomProduct(Integer id, String name, String brand, String price, String imageLink)
+    public RoomProduct(Integer id, String name, String brand, String price, String description, String imageLink, String url)
     {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.price = price;
+        this.description = description;
         this.imageLink = imageLink;
+        this.url = url;
     }
 
     public Integer getId() {
@@ -80,11 +85,19 @@ public class RoomProduct
         this.imageLink = imageLink;
     }
 
-    public String getProductURL() {
-        return productURL;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductURL(String productURL) {
-        this.productURL = productURL;
+    public void setDescription(String desc) {
+        this.description = desc;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String productURL) {
+        this.url = productURL;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.retrofit.room;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -19,4 +20,7 @@ public interface ProductDao
 
     @Query("select * from products_table")
     Observable<List<RoomProduct>> getProducts();
+
+    @Delete
+    Completable deleteItem(RoomProduct roomProduct);
 }

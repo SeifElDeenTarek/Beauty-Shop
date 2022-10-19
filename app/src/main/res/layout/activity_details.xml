@@ -8,11 +8,11 @@
     tools:context=".ui.details.DetailsActivity"
     android:background="#F1F1F1">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/full_details"
         style="@style/cardViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardElevation="12dp">
 
         <LinearLayout
@@ -39,7 +39,7 @@
                     style="@style/itemName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Make up blush Gamda"
+                    tools:text="Make up blush Gamdaa"
                     android:transitionName="name"/>
 
                 <TextView
@@ -89,9 +89,8 @@
                     android:layout_below="@id/details_desc"
                     android:text="@string/add_to_cart"
                     android:drawableEnd="@drawable/add_to_cart"
-                    style="@style/buttonDetails"
-                    android:layout_marginTop="20dp"/>
-
+                    android:layout_marginTop="20dp"
+                    style="@style/buttonDetails"/>
                 <Button
                     android:id="@+id/website_buy"
                     android:layout_width="match_parent"
@@ -104,6 +103,6 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </ScrollView>

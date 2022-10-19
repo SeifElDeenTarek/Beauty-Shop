@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
     ProductViewModel productViewModel;
     ProgressBar progressBar;
-    CardView expandedCard;
     private static final String SEPARATOR = ".json";
 
     @Override

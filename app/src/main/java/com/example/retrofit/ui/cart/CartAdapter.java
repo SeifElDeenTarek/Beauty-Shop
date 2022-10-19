@@ -22,6 +22,7 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder>
 {
     private List<RoomProduct> roomProducts = new ArrayList<>();
+    private itemClickListener itemClickListener;
 
     @Override
     public CartAdapter.CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
@@ -43,6 +44,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 .load(uri)
                 .override(150, 150)
                 .into(holder.productImage);
+
+        holder.itemView.setOnClickListener(v ->{
+            itemClickListener.onItemClick(roomProducts.get(position));
+        });
     }
 
     @Override
@@ -51,10 +56,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         return roomProducts.size();
     }
 
-    public void setList(List<RoomProduct> roomProducts)
+    public interface itemClickListener
+    {
+        void onItemClick(RoomProduct roomProduct);
+    }
+
+    public void setList(List<RoomProduct> roomProducts, CartAdapter.itemClickListener itemClickListener)
     {
         this.roomProducts.clear();
         this.roomProducts = roomProducts;
+        this.itemClickListener = itemClickListener;
         notifyDataSetChanged();
     }
 
