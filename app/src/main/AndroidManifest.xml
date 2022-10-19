@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.MainActivity">
+        <activity
+            android:name=".ui.splash_screen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +21,25 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.main.MainActivity"/>
+        <activity
             android:name=".ui.cart.CartActivity"
             android:label="Cart"
-            android:parentActivityName=".ui.main.MainActivity"/>
+            android:parentActivityName=".ui.main.MainActivity" />
+
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:label="Search"
             android:parentActivityName=".ui.main.MainActivity" />
+
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:label="Details"
+            android:parentActivityName=".ui.main.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

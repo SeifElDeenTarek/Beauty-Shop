@@ -37,8 +37,6 @@ public class CartActivity extends AppCompatActivity
         String productUrl = getIntent().getStringExtra("product_url");
         int id = getIntent().getIntExtra("product_id", 1);
 
-        Log.d(TAG, "Room: "+ id+name+brand+price+imageLink+productUrl);
-
         RecyclerView cartRecycler = findViewById(R.id.room_recycler);
         final CartAdapter cartAdapter = new CartAdapter();
         cartRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -84,7 +82,6 @@ public class CartActivity extends AppCompatActivity
                     public void onNext(List<RoomProduct> roomProducts) {
                         cartAdapter.setList(roomProducts);
                         cartAdapter.notifyDataSetChanged();
-                        Log.d(TAG, "Room3: "+ id+name+brand+price+imageLink+productUrl);
                     }
 
                     @Override

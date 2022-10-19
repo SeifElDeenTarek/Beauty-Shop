@@ -7,6 +7,9 @@
     <string name="search_product_type">Product Type</string>
     <string name="brand_hint">maybelline, colourpop...</string>
     <string name="brand_search">Brand</string>
+    <string name="item_desc">Description</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="buy">Buy</string>
 
     <string-array name="brand_list">
         <item>almay</item>
