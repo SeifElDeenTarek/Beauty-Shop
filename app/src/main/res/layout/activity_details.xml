@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -24,7 +24,8 @@
                 android:id="@+id/details_image"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:contentDescription="@string/picture_content_desc"/>
+                android:contentDescription="@string/picture_content_desc"
+                android:transitionName="image"/>
 
             <RelativeLayout
                 android:id="@+id/details_texts"
@@ -38,7 +39,8 @@
                     style="@style/itemName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Make up blush Gamda" />
+                    tools:text="Make up blush Gamda"
+                    android:transitionName="name"/>
 
                 <TextView
                     android:id="@+id/details_brand"
@@ -46,14 +48,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/details_name"
-                    tools:text="Fantastic" />
+                    tools:text="Fantastic"
+                    android:transitionName="brand"/>
 
                 <TextView
                     android:id="@+id/details_price"
                     style="@style/itemPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="11$" />
+                    tools:text="11$"
+                    android:transitionName="price"/>
 
             </RelativeLayout>
 
@@ -102,4 +106,4 @@
 
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+</ScrollView>

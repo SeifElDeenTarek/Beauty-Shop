@@ -1,6 +1,8 @@
 package com.example.retrofit.ui.main;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +14,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.retrofit.R;
 import com.example.retrofit.pojo.Product;
+import com.example.retrofit.ui.details.DetailsActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,9 +30,7 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>
 {
     @Nullable
-    Context context;
     private itemClickListener itemClickListener;
-
     private List<Product> productList = new ArrayList<>();
 
     @Override

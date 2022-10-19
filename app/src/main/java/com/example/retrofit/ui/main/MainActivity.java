@@ -2,6 +2,8 @@ package com.example.retrofit.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -16,10 +18,12 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.transition.Explode;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -59,23 +63,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // int status = getIntent().getIntExtra("condition", 0);
+        getWindow().setEnterTransition(new Explode());
+        getWindow().setExitTransition(new Explode());
+
         String brand = getIntent().getStringExtra("extra_brand");
         String product = getIntent().getStringExtra("extra_product_name");
-
-        TextView fullName, fullBrand, fullPrice, fullDesc;
-
-        ImageButton cartButton;
-        Button buyButton;
-
-        fullName = findViewById(R.id.full_product_name);
-        fullBrand = findViewById(R.id.full_product_brand);
-        fullPrice = findViewById(R.id.full_product_price);
-        fullDesc = findViewById(R.id.full_product_desc);
-        cartButton = findViewById(R.id.room_cart);
-        buyButton = findViewById(R.id.website_buy);
-
-
 
         if(brand == null && product == null)
         {
@@ -136,7 +128,8 @@ public class MainActivity extends AppCompatActivity
 
         RecyclerView productRecycler = findViewById(R.id.product_recycler);
         final ProductAdapter productAdapter = new ProductAdapter();
-        productRecycler.setLayoutManager(new LinearLayoutManager(this));
+        int noOfCol = 2;
+        productRecycler.setLayoutManager(new GridLayoutManager(this, noOfCol));
         productRecycler.setAdapter(productAdapter);
 
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

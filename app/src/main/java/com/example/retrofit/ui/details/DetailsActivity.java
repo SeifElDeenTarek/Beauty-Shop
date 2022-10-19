@@ -1,6 +1,7 @@
 package com.example.retrofit.ui.details;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.transition.TransitionInflater;
 
 import android.content.Intent;
 import android.net.Uri;
