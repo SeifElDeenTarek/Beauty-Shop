@@ -27,11 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxStrokeColor="@color/secondary"
+            app:boxStrokeColor="@color/primary"
             android:enabled="true"
             app:hintAnimationEnabled="false"
             app:expandedHintEnabled="true"
-            android:layout_marginBottom="8dp">
+            android:background="#FFFFFF"
+            android:theme="@style/changeBackgroundColor">
 
             <AutoCompleteTextView
                 android:layout_width="match_parent"
@@ -40,7 +41,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:id="@+id/brand_name"
                 android:inputType="none"
-                />
+                android:background="#FFFFFF"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,10 +57,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxStrokeColor="@color/secondary"
+            app:boxStrokeColor="@color/primary"
             android:enabled="true"
             app:hintAnimationEnabled="false"
-            app:expandedHintEnabled="true">
+            app:expandedHintEnabled="true"
+            android:background="#FFFFFF"
+            android:theme="@style/changeBackgroundColor">
 
             <AutoCompleteTextView
                 android:layout_width="match_parent"
@@ -67,7 +70,8 @@
                 android:hint="@string/product_type_hint"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:id="@+id/product_name"
-                android:inputType="text"/>
+                android:inputType="text"
+                android:background="#FFFFFF"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,6 +85,6 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
         android:src="@drawable/search_button"
-        android:backgroundTint="@color/primary"/>
+        android:backgroundTint="#FFFFFF"/>
 
 </RelativeLayout>

@@ -11,6 +11,8 @@
     <string name="add_to_cart">Add to Cart</string>
     <string name="buy">Buy</string>
     <string name="remove_from_cart">Remove from cart</string>
+    <string name="title_search_icon">Search</string>
+    <string name="title_cart_icon">Search</string>
 
     <string-array name="brand_list">
         <item>almay</item>

@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.details.DetailsActivity"
-    android:background="#F1F1F1">
+    tools:context=".ui.details.DetailsActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/full_details"
         style="@style/cardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="12dp">
+        app:cardElevation="12dp"
+        app:cardCornerRadius="7dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,10 +37,11 @@
                 <TextView
                     android:id="@+id/details_name"
                     style="@style/itemName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="Make up blush Gamdaa"
-                    android:transitionName="name"/>
+                    android:transitionName="name"
+                    android:maxLength="25"/>
 
                 <TextView
                     android:id="@+id/details_brand"
@@ -80,7 +81,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/Desc"
                     android:fontFamily="@font/alatsi"
-                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="#B3FFFFFF"/>
 
                 <Button
                     android:id="@+id/room_cart"

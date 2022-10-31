@@ -3,7 +3,10 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="primary">#C05326</color>
-    <color name="secondary">#4D087D</color>
-    <color name="dark">#FF983B15</color>
+
+    <color name="primary">#212121</color>
+    <color name="dark">#000000</color>
+    <color name="background">#303030</color>
+    <color name="cards">#424242</color>
+    <color name="secondary">#FFFFFF</color>
 </resources>

@@ -14,15 +14,20 @@
         <item name="colorPrimaryDark">@color/dark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/secondary</item>
-        <item name="titleTextColor">@color/secondary</item>
-        <item name="android:homeAsUpIndicator">@drawable/back_arrow</item>
+        <item name="android:windowBackground">@color/background</item>
     </style>
+
+    <style name="changeBackgroundColor"  parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="colorSurface">@color/primary</item>
+    </style>
+
 
     <style name="cardViewStyle">
         <item name="cardElevation">6dp</item>
         <item name="android:padding">8dp</item>
         <item name="android:layout_margin">10dp</item>
         <item name="android:clickable">true</item>
+        <item name="cardBackgroundColor">@color/cards</item>
     </style>
 
     <style name="itemName">
@@ -48,7 +53,7 @@
         <item name="android:layout_alignParentEnd">true</item>
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline5</item>
     </style>
 

@@ -7,14 +7,14 @@
 
     <item
         android:id="@+id/search_settings"
-        android:title="Search"
+        android:title="@string/title_search_icon"
         android:icon="@drawable/search_icon"
         android:orderInCategory="1"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/cart_icon"
-        android:title="Search"
+        android:title="@string/title_cart_icon"
         android:icon="@drawable/shopping_cart"
         android:orderInCategory="1"
         app:showAsAction="ifRoom" />
